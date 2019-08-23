@@ -1,6 +1,9 @@
 var express = require('express');
+var bodyparser = require('body-parser');
 var app = express();
 var port = 3000;
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({extended:true}));
 
 
 var users = [{id: 1,name: "Tran Van Truong"},
@@ -24,8 +27,13 @@ app.get('/user',function(req,res){
     });  
 });
 
-app.post('./user/create',function(req,res){
+app.get('/user/create',function(req,res){
     res.render('user/create');
+});
+
+app.post('/user/create',function(req,res){
+    console.log(req.body);
+
 });
 
 app.get('/user/search',function(req,res){
