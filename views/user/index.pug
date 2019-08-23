@@ -1,0 +1,18 @@
+head
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', 
+    integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+.container
+    h1 User List
+    form(action="/user/search", method="GET")
+        input#id(type="text", name="q" , value="")
+        button.btn.btn-outline-secondary.m-1 Search
+    ul
+        each us in user
+            li= us.name +'. ID: '+us.id
+script.
+  var searchInput = document.getElementById('id');
+  var value = searchInput.value;
+  searchInput.addEventListener('change', function() {
+  sessionStorage.setItem('draft', searchInput.value)
+  })
+  searchInput.value = sessionStorage.getItem('draft');
