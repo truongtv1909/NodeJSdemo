@@ -1,7 +1,5 @@
-head
-    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', 
-    integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
-.container
+extends ../layout/common
+block common
     h1 User List
     form(action="/user/search", method="GET")
         .col-xs-2
@@ -13,10 +11,10 @@ head
                 span= us.name
                 a.btn.btn-outline-secondary.float-right(href="/user/"+us.id) info
     a.btn.btn-outline-secondary.mt-1(href="/user/create") Create new user
-script.
-  var searchInput = document.getElementById('id');
-  var value = searchInput.value;
-  searchInput.addEventListener('change', function() {
-  sessionStorage.setItem('draft', searchInput.value)
-  })
-  searchInput.value = sessionStorage.getItem('draft');
+    script.
+        var searchInput = document.getElementById('id');
+        var value = searchInput.value;
+        searchInput.addEventListener('change', function() {
+        sessionStorage.setItem('draft', searchInput.value)
+        })
+        searchInput.value = sessionStorage.getItem('draft');
