@@ -52,10 +52,10 @@ app.get('/user/search',function(req,res){
     
 });
 
-app.get('/user/:id',function(req,res){
-    var id =req.params.id;
-    if(id){
-        var userInfo = db.get('users').find({id:id}).value();
+app.get('/user/:userId',function(req,res){
+    var idpr =req.params.userId;
+    if(idpr){
+        var userInfo = db.get('users').find({id:idpr}).value();
         res.render('user/info',{
             user: userInfo
         });
@@ -68,7 +68,8 @@ app.post('/user/create',function(req,res){
     var namenew = req.body.na;
     var newuser ={
         id: shortid.generate(),
-         name:namenew
+        name: namenew,
+        about: req.body.about
     };
     db.get('users').push(newuser).write();
     res.redirect('/user');

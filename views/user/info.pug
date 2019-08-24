@@ -4,16 +4,20 @@ head
 .container
     h1 User infomation
     //- ul.list-group
-        //- li.list-group-item
-        //-     ='id: '+user.id
-        //- li.list-group-item
-        //-     ='Name: '+user.name
+    //-     li.list-group-item
+    //-         ='id: '+user.id
+    //-     li.list-group-item
+    //-         ='Name: '+user.name
     .input-group.input-group-sm.mb-3
         .input-group-prepend 
             span.input-group-text UserID
-        input.form-control(type="text" value=' '+user.id)
+        input.form-control(type="text", value=' '+user.id)
     .input-group.input-group-sm.mb-3
         .input-group-prepend 
             span.input-group-text Name
-        input.form-control(type="text" value=' '+user.name)
+        input.form-control(type="text", value=' '+user.name)
+    .input-group
+            .input-group-prepend
+                span.input-group-text About infomatino
+            textarea.form-control(aria-label='With textarea')=user.about
     a.btn.btn-outline-secondary.mt-1(href="/user") Back

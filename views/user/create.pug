@@ -4,6 +4,14 @@ head
 .container
     h2 create user
     form(action="/user/create",method="POST")
-        label Name
-        input.form-control(name ="na", type="text")
+        .input-group.input-group-sm.mb-3
+            .input-group-prepend 
+                span.input-group-text Name user
+            input.form-control(type="text", name ="na")
+        .input-group
+            .input-group-prepend
+                span.input-group-text About infomatino
+            textarea.form-control(aria-label='With textarea',name="about")
+        
         button.btn.btn-outline-secondary.mt-1 Create
+    
