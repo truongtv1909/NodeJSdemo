@@ -8,11 +8,8 @@ var port = 3000;
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
 
-
 app.set('view engine','pug');
 app.set('views','./views');
-
-
 
 app.get('/',function(req,res){
     res.render('index',{
