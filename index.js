@@ -32,7 +32,17 @@ app.get('/user/create',function(req,res){
 });
 
 app.post('/user/create',function(req,res){
-    console.log(req.body);
+    var namenew = req.body.na;
+    var newuser ={
+        id: users.length+1,
+         name:namenew
+    };
+    users.push(newuser);
+    res.redirect('/user');
+    // res.render('user/index',{
+    //     user:users
+    // });
+    
 
 });
 
@@ -42,6 +52,7 @@ app.get('/user/search',function(req,res){
        return us.name.toLocaleLowerCase().includes(key.toLocaleLowerCase());
         
     });
+    
     res.render('user/index',{
         user: newarr
         

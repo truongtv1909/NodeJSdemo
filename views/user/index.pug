@@ -4,11 +4,13 @@ head
 .container
     h1 User List
     form(action="/user/search", method="GET")
-        input#id(type="text", name="q" , value="")
-        button.btn.btn-outline-secondary.m-1 Search
-    ul
+        .col-xs-2
+            input#id.form-control(type="text", name="q" , value="")
+        button.btn.btn-outline-secondary.mt-1 Search
+    ul.list-group
         each us in user
-            li= us.name +'. ID: '+us.id
+            li.list-group-item= us.name +'. ID: '+us.id
+    a.btn.btn-outline-secondary.mt-1(href="/user/create") Create new user
 script.
   var searchInput = document.getElementById('id');
   var value = searchInput.value;
