@@ -1,0 +1,19 @@
+.divtbs{
+display: flex;
+}
+.btnbts{
+    margin-top: 0;
+}
+.navbarnone{
+    display: block;
+    background-color:#EEE !important;
+    border-radius:5px; 
+}
+.navcus{
+    display: inline;
+    color: #555;
+    transition: all 1s;
+}
+.navcus:hover{
+    color: #222;
+}

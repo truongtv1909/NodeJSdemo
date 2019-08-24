@@ -61,7 +61,6 @@ module.exports.getsearch = function(req,res){
     });
     res.render('user/index',{
         user: newarr
-        
     })   
 };
 
@@ -79,11 +78,61 @@ module.exports.getUserInfo = function(req,res){
 
 module.exports.potCreateUser = function(req,res){
     var namenew = req.body.na;
-    var newuser ={
-        id: shortid.generate(),
-        name: namenew,
-        about: req.body.about
-    };
-    db.get('users').push(newuser).write();
+    var phone = req.body.phon;
+    var about = req.body.about;
+    var err =[];
+    if(!namenew){
+        err.push('Please input name');
+    }
+    if(!about){
+        err.push('Please input about');
+    }
+    if(!phone){
+        err.push('Please input Phone');
+    }
+    if(err.length){
+        res.render('user/create',{
+            er: err,
+            value: req.body,     
+        })
+        return;
+    }
+    console.log(parseInt(phone));
+    if(parseInt(phone)){
+        if(phone.length===10){
+             if(phone[0]==='0'){
+            var newuser ={
+                id: shortid.generate(),
+                name: namenew,
+                phone: phone,
+                about: about
+                };
+                db.get('users').push(newuser).write();
+                }else{
+                    err.push('Number phone start is: 0');
+                    res.render('user/create',{
+                        er: err,
+                        value: req.body,     
+                    })
+                    return; 
+                }    
+        }else{
+            err.push('Number phone leng is: 10');
+            res.render('user/create',{
+                er: err,
+                value: req.body,     
+            })
+            return;
+        }
+    }else{
+      
+        err.push('input is not number phone string');
+        res.render('user/create',{
+            er: err,
+            value: req.body,     
+        })
+        return;
+    }
+    
     res.redirect('/user');  
 };

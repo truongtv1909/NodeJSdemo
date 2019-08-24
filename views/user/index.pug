@@ -1,20 +1,40 @@
 extends ../layout/common
 block common
-    h1 User List
-    form(action="/user/search", method="GET")
-        .col-xs-2
-            input#id.form-control(type="text", name="q" , value="")
-        button.btn.btn-outline-secondary.mt-1 Search
-    ul.list-group
-        each us in user
-            li.list-group-item
-                span= us.name
-                a.btn.btn-outline-secondary.float-right(href="/user/"+us.id) info
-    a.btn.btn-outline-secondary.mt-1(href="/user/create") Create new user
-    script.
-        var searchInput = document.getElementById('id');
-        var value = searchInput.value;
-        searchInput.addEventListener('change', function() {
-        sessionStorage.setItem('draft', searchInput.value)
-        })
-        searchInput.value = sessionStorage.getItem('draft');
+    nav.navbar.navbar-light.bg-light.mb-3.p-4.navbarnone
+        a.navbar-brand(href='/')
+            img.d-inline-block.align-top.mr-1(src='/img/logo.jpg', width='30', height='30', alt='')
+            |Home
+        a.nav-link.navcus(href="./") User
+        a.nav-link.navcus(href="#") Boock
+        a.nav-link.navcus(href="#") Pets
+        a.nav-link.navcus(href="#") About us
+    .container
+        .d-flex.align-items-center
+            a.btn.btn-outline-secondary.mt-1(href="/user/create") Create new user
+            form.ml-auto(action="/user/search", method="GET")
+                .col-xs-2.divtbs
+                    input#id.form-control(type="text", name="q" , value="")
+                    button.btn.btn-outline-secondary.ml-1 Search
+        table.table.table-striped
+            tr
+                th ID
+                th Name
+                th Phone
+                th About
+                th Action
+            each us in user
+                tr
+                    td=us.id
+                    td=us.name
+                    td=us.phone
+                    td=us.about
+                    td
+                        a.btn.btn-outline-secondary(href="/user/"+us.id) info 
+        script.
+            var searchInput = document.getElementById('id');
+            var value = searchInput.value;
+            searchInput.addEventListener('change', function() {
+            sessionStorage.setItem('draft', searchInput.value)
+            })
+            searchInput.value = sessionStorage.getItem('draft');
+
