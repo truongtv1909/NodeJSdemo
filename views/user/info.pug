@@ -1,0 +1,19 @@
+head
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', 
+    integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+.container
+    h1 User infomation
+    //- ul.list-group
+        //- li.list-group-item
+        //-     ='id: '+user.id
+        //- li.list-group-item
+        //-     ='Name: '+user.name
+    .input-group.input-group-sm.mb-3
+        .input-group-prepend 
+            span.input-group-text UserID
+        input.form-control(type="text" value=' '+user.id)
+    .input-group.input-group-sm.mb-3
+        .input-group-prepend 
+            span.input-group-text Name
+        input.form-control(type="text" value=' '+user.name)
+    a.btn.btn-outline-secondary.mt-1(href="/user") Back

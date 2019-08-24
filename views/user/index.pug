@@ -9,7 +9,9 @@ head
         button.btn.btn-outline-secondary.mt-1 Search
     ul.list-group
         each us in user
-            li.list-group-item= us.name +'. ID: '+us.id
+            li.list-group-item
+                span= us.name
+                a.btn.btn-outline-secondary.float-right(href="/user/"+us.id) info
     a.btn.btn-outline-secondary.mt-1(href="/user/create") Create new user
 script.
   var searchInput = document.getElementById('id');
