@@ -72,11 +72,7 @@ app.post('/user/create',function(req,res){
         about: req.body.about
     };
     db.get('users').push(newuser).write();
-    res.redirect('/user');
-    // res.render('user/index',{
-    //     user:users
-    // });
-    
+    res.redirect('/user');  
 
 });
 
