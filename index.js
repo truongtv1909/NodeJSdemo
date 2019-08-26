@@ -3,6 +3,7 @@ var bodyparser = require('body-parser');
 var cookieperser = require('cookie-parser');
 
 var userRoute = require('./rountes/user.router');
+var userLogin = require('./rountes/login.router');
 var app = express();
 var port = 3000;
 
@@ -21,7 +22,7 @@ app.get('/',function(req,res){
 });
 
 app.use('/user',userRoute);
-
+app.use('/login',userLogin);
 app.listen(port,function(){
     console.log('server port is:'+port);
 });

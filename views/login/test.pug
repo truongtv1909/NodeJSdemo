@@ -1,0 +1,29 @@
+extends ../layout/common
+block common
+    nav.navbar.navbar-light.bg-light.mb-3.p-4.navbarnone
+            a.navbar-brand(href='/')
+                img.d-inline-block.align-top.mr-1(src='/img/logo.jpg', width='30', height='30', alt='')
+                |Home
+            a.nav-link.navcus(href="./") User
+            a.nav-link.navcus(href="#") Boock
+            a.nav-link.navcus(href="#") Pets
+            a.nav-link.navcus(href="#") About us
+    .container
+        h1 Login form
+        if er
+            each erro in er
+                .alert.alert-danger=erro
+
+        form(action="",method="post")
+            .input-group.input-group.mb-2
+                .input-group-prepend 
+                    span.input-group-text Email
+                input.form-control(type="text", name ="email")
+            .input-group.input-group.mb-2
+                .input-group-prepend 
+                    span.input-group-text Password
+                input.form-control(type="password", name ="password")
+            
+            
+            button.btn.btn-outline-secondary.mt-1 Login
+            a.btn.btn-outline-secondary.mt-1.ml-1(href="/user") Cancel
