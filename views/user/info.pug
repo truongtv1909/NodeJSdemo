@@ -1,18 +1,27 @@
 extends ../layout/common
 block common
-    h1 User infomation
-   
-    .input-group.input-group-sm.mb-3
-        .input-group-prepend 
-            span.input-group-text UserID
-        input.form-control(type="text", value=' '+user.id)
-    .input-group.input-group-sm.mb-3
-        .input-group-prepend 
-            span.input-group-text Name
-        input.form-control(type="text", value=' '+user.name)
-    .input-group
-            .input-group-prepend
-                span.input-group-text About infomatino
-            textarea.form-control(aria-label='With textarea')=user.about
-    a.btn.btn-outline-secondary.mt-1(href="/user") Back
+    nav.navbar.navbar-light.bg-light.mb-3.p-4.navbarnone
+            a.navbar-brand(href='/')
+                img.d-inline-block.align-top.mr-1(src='/img/logo.jpg', width='30', height='30', alt='')
+                |Home
+            a.nav-link.navcus(href="./") User
+            a.nav-link.navcus(href="#") Boock
+            a.nav-link.navcus(href="#") Pets
+            a.nav-link.navcus(href="#") About us
+    .container
+        h1 User infomation
+    
+        .input-group.input-group-sm.mb-3
+            .input-group-prepend 
+                span.input-group-text UserID
+            input.form-control(type="text", value=' '+user.id)
+        .input-group.input-group-sm.mb-3
+            .input-group-prepend 
+                span.input-group-text Name
+            input.form-control(type="text", value=' '+user.name)
+        .input-group
+                .input-group-prepend
+                    span.input-group-text About infomatino
+                textarea.form-control(aria-label='With textarea')=user.about
+        a.btn.btn-outline-secondary.mt-1(href="/user") Back
     

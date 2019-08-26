@@ -1,88 +1,10 @@
 {
   "users": [
     {
-      "id": "0Jx70ykcG",
-      "name": "Tran Van Truong",
+      "id": "td4w2uwLo",
+      "name": "Tran van truong",
       "phone": "0985929797",
-      "about": "Chuyen gia Fulltact"
-    },
-    {
-      "id": "Wd9cXSZJD",
-      "name": "Nguyen Thi Hai Ha",
-      "phone": "0985929797",
-      "about": "Phien dich vien"
-    },
-    {
-      "id": "wp7Bw09As",
-      "name": "Tran Nguyen Bao Ngoc",
-      "phone": "0985666888",
-      "about": "Hoc sinh gioi quoc gia"
-    },
-    {
-      "id": "bYBXntF6P",
-      "name": "test",
-      "phone": "0962989794",
-      "about": "about"
-    },
-    {
-      "id": "FyzSLZ2l4",
-      "name": "asdasd",
-      "phone": "0985929797",
-      "about": "asdasd"
-    },
-    {
-      "id": "Aosmd6Fyy",
-      "name": "asdasd",
-      "phone": "asaa",
-      "about": "asd"
-    },
-    {
-      "id": "ill0m0Yd6",
-      "name": "1",
-      "phone": "2",
-      "about": "3"
-    },
-    {
-      "id": "5-YE71z60",
-      "name": "asdasd",
-      "phone": "0985929797",
-      "about": "a"
-    },
-    {
-      "id": "Di4RonGFy",
-      "name": "1",
-      "phone": "0985929797",
-      "about": "1"
-    },
-    {
-      "id": "WWIAhm492",
-      "name": "a",
-      "phone": "werwer",
-      "about": "a"
-    },
-    {
-      "id": "4YYueq5mE",
-      "name": "a",
-      "phone": "1",
-      "about": "a"
-    },
-    {
-      "id": "laXCVsWGC",
-      "name": "a",
-      "phone": "a",
-      "about": "a"
-    },
-    {
-      "id": "DtCl3TljF",
-      "name": "a",
-      "phone": "1234567891",
-      "about": "a"
-    },
-    {
-      "id": "XmkQKN5ak",
-      "name": "asd",
-      "phone": "0985929797",
-      "about": "asd"
+      "about": "asdas"
     }
   ]
 }
