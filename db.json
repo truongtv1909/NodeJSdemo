@@ -4,7 +4,9 @@
       "id": "td4w2uwLo",
       "name": "Tran van truong",
       "phone": "0985929797",
-      "about": "asdas"
+      "about": "asdas",
+      "email": "admin@gmail.com",
+      "password": "asdasd"
     }
   ]
 }

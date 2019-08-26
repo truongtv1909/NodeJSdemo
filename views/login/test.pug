@@ -10,8 +10,8 @@ block common
             a.nav-link.navcus(href="#") About us
     .container
         h1 Login form
-        if er
-            each erro in er
+        if err
+            each erro in err
                 .alert.alert-danger=erro
 
         form(action="",method="post")
@@ -26,4 +26,4 @@ block common
             
             
             button.btn.btn-outline-secondary.mt-1 Login
-            a.btn.btn-outline-secondary.mt-1.ml-1(href="/user") Cancel
+            a.btn.btn-outline-secondary.mt-1.ml-1(href="/login") Cancel
