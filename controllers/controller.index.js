@@ -13,7 +13,7 @@ module.exports.index = function(req,res,next){
         });
     }else{
         labe = 'Login';
-        add ='Home';
+        add ='';
         res.render('index',{
             name:add.toLocaleUpperCase(),
             labes:labe

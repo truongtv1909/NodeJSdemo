@@ -1,0 +1,32 @@
+extends ../layout/common
+block common
+    nav.navbar.navbar-light.bg-light.mb-3.p-4.navbarnone
+            a.navbar-brand(href='/')
+                img.d-inline-block.align-top.mr-1(src='/img/logo.jpg', width='30', height='30', alt='')
+                |Home
+            a.nav-link.navcus(href="/pet") Pet
+    .container
+        h1 Pet infomation
+    
+        .input-group.input-group-lg.mb-3
+            .input-group-prepend 
+                span.input-group-text Pet id
+            input.form-control(type="text", value=' '+pet.id)
+        .input-group.input-group-lg.mb-3
+            .input-group-prepend 
+                span.input-group-text Pet name
+            input.form-control(type="text", value=' '+pet.name)
+        .input-group.input-group-lg.mb-3
+            .input-group-prepend 
+                span.input-group-text Quanlity
+            input.form-control(type="text", value=' '+pet.quanlity)
+        .input-group.input-group-lg.mb-3
+            .input-group-prepend 
+                span.input-group-text Price
+            input.form-control(type="text", value=' '+pet.price)
+        .input-group
+                .input-group-prepend
+                    span.input-group-text About infomatino
+                textarea.form-control(aria-label='With textarea')=pet.description
+        a.btn.btn-outline-secondary.mt-1(href="/pet") Back
+    

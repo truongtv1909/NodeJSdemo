@@ -20,14 +20,13 @@ app.set('view engine','pug');
 app.set('views','./views');
 
 
+app.use('/login',userLogin);
+app.use('/user',middleware.requireLogin,userRoute);
+app.use('/pet',middleware.requireLogin,userPet);
 
 app.get('/',validateIndex.index,function(req,res){
-
+// index --- app
 });
-
-app.use('/user',middleware.requireLogin,userRoute);
-app.use('/login',userLogin);
-app.use('/pet',middleware.requireLogin,userPet);
 app.listen(port,function(){
     console.log('server port is:'+port);
 });

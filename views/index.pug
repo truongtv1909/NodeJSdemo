@@ -3,13 +3,13 @@ block common
     nav.navbar.navbar-light.bg-light.mb-3.p-4.navbarnone
         a.navbar-brand.colorcus-g(href='/')
             img.d-inline-block.align-top.mr-1(src='/img/logo.jpg', width='30', height='30', alt='')
-            |#{name}
+            |#{name?name:'Home'}
         a.nav-link.navcus(href="/login")=labes
         a.nav-link.navcus(href="/user") User
         a.nav-link.navcus(href="/pet") Pets
         a.nav-link.navcus(href="#") About us
     .container
-        h1 Hi <samp style ="color:red">#{name}
+        h1 Hi <samp style ="color:red">#{name?name:'You'}
         h2.colorcus-g Wellcome to manager App!....
-   
+        h2.colorcus-g=name?'':'Please login to continus..'
 //-    

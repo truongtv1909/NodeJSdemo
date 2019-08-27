@@ -9,3 +9,26 @@ block common
         a.nav-link.navcus(href="#") About us
     .container
         h1 This is component pet
+        .d-flex.align-items-center
+            a.btn.btn-outline-secondary.mt-1(href="/pet/create") Create new pet
+            form.ml-auto(action="/pet/search", method="GET")
+                .col-xs-2.divtbs
+                    input#id.form-control(type="text", name="q" , value="")
+                    button.btn.btn-outline-secondary.ml-1 Search
+        table.table.table-striped
+            tr
+                th ID
+                th Name
+                th Quanlity
+                th Price
+                th Description
+                th Action
+            each pt in pet 
+                tr
+                    td= pt.id
+                    td= pt.name
+                    td= pt.quanlity
+                    td= pt.price
+                    td= pt.description
+                    td
+                        a.btn.btn-outline-secondary(href="/pet/"+pt.id) info 
