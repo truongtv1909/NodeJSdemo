@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require('express');
 var bodyparser = require('body-parser');
 var cookieperser = require('cookie-parser');
@@ -14,7 +15,7 @@ var port = 3000;
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(express.static('public'));
-app.use(cookieperser());
+app.use(cookieperser('asdasuio12'));
 
 app.set('view engine','pug');
 app.set('views','./views');

@@ -3,7 +3,7 @@ var shortid = require('shortid');
 
 module.exports.validatePostCreatePet = function(req, res, next){
     // req.body.id = shortid();
-    console.log(req.body)
+    
 
     var errors = [];
     var name = req.body.name;
@@ -11,17 +11,16 @@ module.exports.validatePostCreatePet = function(req, res, next){
     var price = parseInt(req.body.price);
     var description = req.body.description;
     if(!name || !quanlity || !price || !description){
-        // console.log('input.............. ');
         errors.push('please input full content..');
-        // res.redirect('/pet/create');
-        // return;
     }
-    if(typeof quanlity !== 'number'){
+    if(!quanlity){
         errors.push('Quanlity is number.. ');
+        console.log(req.body)
     }
-    if(typeof price !== 'number'){
+    if(!price){
         errors.push('Price is number...');
     }
+    console.log(errors);
     if(errors.length){
 
         res.render('pet/createpet',{

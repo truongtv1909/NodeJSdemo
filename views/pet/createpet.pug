@@ -8,8 +8,8 @@ block common
     .container
         h1 create pet
         if err
-        each erro in err
-            .alert.alert-danger=erro
+            each erro in err
+                .alert.alert-danger=erro
 
         form(action="/pet/create",method="POST")
             .input-group.input-group.mb-2
