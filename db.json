@@ -7,6 +7,14 @@
       "about": "asdas",
       "email": "admin@gmail.com",
       "password": "asdasd"
+    },
+    {
+      "id": "1YtLnQFmT",
+      "name": "Test",
+      "phone": "0985929797",
+      "about": "as",
+      "email": "test@gmail.com",
+      "password": "ditnhaudianh"
     }
   ]
 }

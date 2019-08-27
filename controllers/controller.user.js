@@ -1,11 +1,8 @@
 var db = require('../db');
 var userinDB = db.get('users').value();
 var shortid = require('shortid');
-// var cookieperser = require('cookie-parser');
-// // router.use(cookieperser());
 
 module.exports.index = function(req,res){
-
     res.render('user/index',{
         user: userinDB
     });  
@@ -39,7 +36,6 @@ module.exports.getUserInfo = function(req,res){
 };
 
 module.exports.potCreateUser = function(req,res){
-    
     db.get('users').push(res.locals.newuser).write();
     res.redirect('/user');  
 };

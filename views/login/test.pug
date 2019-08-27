@@ -4,10 +4,7 @@ block common
             a.navbar-brand(href='/')
                 img.d-inline-block.align-top.mr-1(src='/img/logo.jpg', width='30', height='30', alt='')
                 |Home
-            a.nav-link.navcus(href="./") User
-            a.nav-link.navcus(href="#") Boock
-            a.nav-link.navcus(href="#") Pets
-            a.nav-link.navcus(href="#") About us
+    
     .container
         h1 Login form
         if err
@@ -18,7 +15,7 @@ block common
             .input-group.input-group.mb-2
                 .input-group-prepend 
                     span.input-group-text Email
-                input.form-control(type="text", name ="email")
+                input.form-control(type="text", name ="email", value='')
             .input-group.input-group.mb-2
                 .input-group-prepend 
                     span.input-group-text Password

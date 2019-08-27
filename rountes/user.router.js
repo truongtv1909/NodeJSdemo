@@ -2,6 +2,7 @@ var express = require('express');
 var controller = require('../controllers/controller.user');
 var router = express.Router();
 
+
 var validate = require('../validate/user.validate');
 
 router.get('/',controller.index);
