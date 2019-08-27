@@ -1,6 +1,6 @@
+var md5 = require('md5');
 var db = require('../db');
 var userinDB = db.get('users').value();
-var shortid = require('shortid');
 
 module.exports.login = function(req, res){
 res.clearCookie('cooid');
@@ -19,7 +19,8 @@ if(!userif){
     });
     return;
 }
-if(userif.password !== password){
+var passwordHard = md5(password);
+if(userif.password !== passwordHard){
     error.push('password is wrong');
     res.render('login/test',{
         err: error
