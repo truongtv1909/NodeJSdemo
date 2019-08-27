@@ -4,7 +4,7 @@
   "description": "This is NodeJS, How to learn NodeJS.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon --inspect index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -20,55 +20,6 @@
       "quanlity": 5,
       "price": 50000,
       "description": "Mong coc"
-    },
-    {
-      "name": "house",
-      "quanlity": "2",
-      "price": "90000",
-      "description": "xich tho",
-      "id": "l36tvtz_u"
-    },
-    {
-      "name": "dog",
-      "quanlity": "123",
-      "price": "1",
-      "description": "as",
-      "id": "nq794Pnn2"
-    },
-    {
-      "name": "Fox",
-      "quanlity": "123",
-      "price": "90000",
-      "description": "Fire fox",
-      "id": "h8y3lktJV"
-    },
-    {
-      "id": "eO_6al2lj",
-      "name": "dog",
-      "quanlity": 1,
-      "price": 1,
-      "description": "a"
-    },
-    {
-      "id": "QQP67H9zB",
-      "name": "",
-      "quanlity": 1,
-      "price": 1,
-      "description": ""
-    },
-    {
-      "id": "hmGg9awvD",
-      "name": "dog",
-      "quanlity": 1,
-      "price": 1,
-      "description": "1"
-    },
-    {
-      "id": "yWmv3WFhB",
-      "name": "dog",
-      "quanlity": 1,
-      "price": 1,
-      "description": "1"
     }
   ]
 }
