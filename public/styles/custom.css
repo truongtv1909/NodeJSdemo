@@ -6,7 +6,7 @@ display: flex;
 }
 .navbarnone{
     display: block;
-    background-color:#EEE !important;
+    background-color:#afb5b5 !important;
     border-radius:5px; 
 }
 .navcus{
@@ -18,5 +18,5 @@ display: flex;
     color: #222;
 }
 .colorcus-g{
-color: green;
+color: green !important;
 }
