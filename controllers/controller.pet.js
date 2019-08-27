@@ -13,10 +13,7 @@ module.exports.getCreate = function(req,res){
 };
 
 module.exports.postCreate = function(req,res){
-    req.body.id = shortid();
-    petdb.get('petdb').push(req.body).write();
     res.redirect('/pet');
-
 };
 
 module.exports.getSearch = function(req,res){

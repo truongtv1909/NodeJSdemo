@@ -7,27 +7,27 @@ block common
         a.nav-link.navcus(href="/pet") Pet
     .container
         h1 create pet
-            //- if er
-            //- each erro in er
-            //-     .alert.alert-danger=erro
+        if err
+        each erro in err
+            .alert.alert-danger=erro
 
         form(action="/pet/create",method="POST")
             .input-group.input-group.mb-2
                 .input-group-prepend 
                     span.input-group-text Name pet
-                input.form-control(type="text", name ="name",value=value?value.na:"")
+                input.form-control(type="text", name ="name",value=value?value.name:"")
             .input-group.input-group.mb-2
                 .input-group-prepend 
                     span.input-group-text Quanlity
-                input.form-control(type="text", name ="quanlity",value=value?value.na:"")
+                input.form-control(type="text", name ="quanlity",value=value?value.quanlity:"")
             .input-group.input-group.mb-2
                 .input-group-prepend 
                     span.input-group-text Price
-                input.form-control(type="text", name ="price",value=value?value.na:"")
+                input.form-control(type="text", name ="price",value=value?value.price:"")
             .input-group
                 .input-group-prepend
                     span.input-group-text Description
-                textarea.form-control(aria-label='With textarea',name="description")=value=value?value.about:""
+                textarea.form-control(aria-label='With textarea',name="description")=value=value?value.description:""
             
             button.btn.btn-outline-secondary.mt-1 Create
             a.btn.btn-outline-secondary.mt-1.ml-1(href="/pet") Cancel
