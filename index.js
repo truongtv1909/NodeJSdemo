@@ -4,6 +4,7 @@ var cookieperser = require('cookie-parser');
 
 var userRoute = require('./rountes/user.router');
 var userLogin = require('./rountes/login.router');
+var userPet = require('./rountes/pet.router');
 var middleware = require('./middleware/middleware');
 var validateIndex = require('./controllers/controller.index');
 var db = require('./db');
@@ -26,6 +27,7 @@ app.get('/',validateIndex.index,function(req,res){
 
 app.use('/user',middleware.requireLogin,userRoute);
 app.use('/login',userLogin);
+app.use('/pet',middleware.requireLogin,userPet);
 app.listen(port,function(){
     console.log('server port is:'+port);
 });
