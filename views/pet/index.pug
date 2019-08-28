@@ -20,19 +20,19 @@ block common
         .row
             each pt in pet
                 .col-3
-                    .card(style='width: 18rem;')
+                    .card(style='width: 18rem;').p-2
                         img(src=''+pt.image).card-img-top
-                        .card-body
+                        .card-body.p-2
                             h5.card-title=pt.name
                             p.card-text=pt.description
                             a.btn.btn-primary Add to cart
-        form
+      
         nav(aria-label='Page navigation example').mt-2
             ul.pagination
                 li.page-item.disabled
                 a.page-link(href='?page='+(page-1)) Previous
                 li.page-item
                 - for (var x = 1; x <= numberpage; x++)
-                    a.page-link(href='?page='+x)=x
+                    a.page-link(href='?page='+x+'&name='+name)=x
                 li.page-item
                 a.page-link(href='?page='+(page+1)) Next
