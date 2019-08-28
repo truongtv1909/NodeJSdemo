@@ -6,19 +6,22 @@
       "phone": "0985929797",
       "about": "asdas",
       "email": "admin@gmail.com",
-      "password": "a8f5f167f44f4964e6c998dee827110c"
+      "password": "a8f5f167f44f4964e6c998dee827110c",
+      "avatar": "uploads/admin"
     },
     {
-      "id": "n5RvzaZGZ",
+      "id": "_aB6Jg-HZ",
+      "name": "test",
+      "phone": "0985929797",
+      "about": "tre trau",
+      "avatar": "/uploads/logo"
+    },
+    {
+      "id": "Bf-UWbOFM",
       "name": "asdasd",
-      "phone": "0985929797",
-      "about": "asd"
-    },
-    {
-      "id": "klh8KgKYn",
-      "name": "1",
-      "phone": "0985929797",
-      "about": "1"
+      "phone": "1234567894",
+      "about": "asd",
+      "avatar": "uploads\\f42521c72ed2bf8faf98224aeeec3768"
     }
   ]
 }

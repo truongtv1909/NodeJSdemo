@@ -10,7 +10,7 @@ block common
             each erro in er
                 .alert.alert-danger=erro
 
-        form(action="/user/create",method="POST")
+        form(action="/user/create",method="POST",enctype="multipart/form-data") 
             .input-group.input-group.mb-2
                 .input-group-prepend 
                     span.input-group-text Name user
@@ -19,6 +19,10 @@ block common
                 .input-group-prepend 
                     span.input-group-text Phone user
                 input.form-control(type="text", name ="phon",value=value?value.phon:"")
+            .input-group.input-group.mb-2
+                .input-group-prepend 
+                    span.input-group-text Avatar
+                        input.form-control-file(type="file", name ="avatar").ml-1
             .input-group
                 .input-group-prepend
                     span.input-group-text About infomatino

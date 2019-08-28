@@ -16,14 +16,15 @@ block common
                     button.btn.btn-outline-secondary.ml-1 Search
         table.table.table-striped
             tr
-                th ID
+                th Avatar
                 th Name
                 th Phone
                 th About
                 th Action
             each us in user
                 tr
-                    td=us.id
+                    td
+                        img(src=us.avatar,width="32", alt="")
                     td=us.name
                     td=us.phone
                     td=us.about

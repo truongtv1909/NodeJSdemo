@@ -1,9 +1,17 @@
 var shortid = require('shortid');
+var multer = require('multer');
 module.exports.potCreateUser = function(req,res,next){
-   
+   var body = req.body;
     var namenew = req.body.na;
     var phone = req.body.phon;
     var about = req.body.about;
+    if(req.file){
+        var avatar = req.file.path.split('public\\').join('');
+    }else{
+        var avatar = '/uploads/logo'
+    }
+    // var avatars = avatarString.split('public\\');
+    // var avatar = avatars.join('');
     var phoneno = /^\d{10}$/;
     var err =[];
     if(!namenew){
@@ -13,6 +21,7 @@ module.exports.potCreateUser = function(req,res,next){
         err.push('Please input about');
     }
     if(phone.match(phoneno)){
+    // if(!phone){
     }else{
         err.push('invalid phone number');
     }
@@ -27,7 +36,8 @@ module.exports.potCreateUser = function(req,res,next){
         id: shortid.generate(),
         name: namenew,
         phone: phone,
-        about: about
+        about: about,
+        avatar: avatar
         };
 next();
 };
