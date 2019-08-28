@@ -14,8 +14,12 @@ block common
         form(action="/pet/create",method="POST")
             .input-group.input-group.mb-2
                 .input-group-prepend 
-                    span.input-group-text Name pet
+                    span.input-group-text Pet name
                 input.form-control(type="text", name ="name",value=value?value.name:"")
+            .input-group.input-group.mb-2
+                .input-group-prepend 
+                    span.input-group-text Pet image
+                input.form-control(type="text", name ="image",value=value?value.image:"")
             .input-group.input-group.mb-2
                 .input-group-prepend 
                     span.input-group-text Quanlity
