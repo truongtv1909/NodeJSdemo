@@ -7,5 +7,5 @@ petdb = low(adapter);
 
 
 //set defaults db
-petdb.defaults({petdb: []}).write();
+petdb.defaults({petdb: [],session:[]}).write();
 module.exports = petdb;

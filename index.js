@@ -16,6 +16,7 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(express.static('public'));
 app.use(cookieperser('asdasuio12'));
+app.use(middleware.sessionCard,middleware.sessionCount);
 
 app.set('view engine','pug');
 app.set('views','./views');

@@ -1,12 +1,14 @@
 extends ../layout/common
 block common
+ 
     nav.navbar.navbar-light.bg-light.mb-3.p-4.navbarnone
         a.navbar-brand(href='/')
             img.d-inline-block.align-top.mr-1(src='/img/logo.jpg', width='30', height='30', alt='')
             |Home
         a.nav-link.navcus(href="/pet") Pet
         a.nav-link.navcus(href="/user") User
-        a.nav-link.navcus(href="#") About us
+        a.nav-link.navcus(href="#") Cart(#{countCart?countCart:0} pets) 
+    
     .container
         h1 Pet list
         .d-flex.align-items-center
@@ -15,8 +17,6 @@ block common
                 .col-xs-2.divtbs
                     input#id.form-control(type="text", name="q" , value="")
                     button.btn.btn-outline-secondary.ml-1 Search
-       
-            
         .row
             each pt in pet
                 .col-3
@@ -25,7 +25,7 @@ block common
                         .card-body.p-2
                             h5.card-title=pt.name
                             p.card-text=pt.description
-                            a.btn.btn-primary Add to cart
+                            a.btn.btn-primary(href='/pet/add/'+pt.id) Add to cart
       
         nav(aria-label='Page navigation example').mt-2
             ul.pagination

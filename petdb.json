@@ -800,5 +800,26 @@
       "price": 43,
       "description": "metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh"
     }
+  ],
+  "session": [
+    {
+      "id": "nG2cEzJT4",
+      "cart": {
+        "41ea4721-4843-4179-b6a2-d86e21bcd6a2": 1
+      }
+    },
+    {
+      "id": "AfDheCZVZ",
+      "cart": {
+        "36c04ef8-dbab-49fc-b7cc-71592b9e38b5": 1
+      }
+    },
+    {
+      "id": "oO-2-AqVn",
+      "cart": {
+        "41ea4721-4843-4179-b6a2-d86e21bcd6a2": 2,
+        "14f5cd8f-4258-40e8-9666-04dacbac919e": 1
+      }
+    }
   ]
 }
