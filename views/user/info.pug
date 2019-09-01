@@ -7,23 +7,27 @@ block common
             a.nav-link.navcus(href="/user") User
     .container
         h1 User infomation
-        form(action="/user/update", method ="POST")
+        form(action="/user/update", method ="POST",enctype="multipart/form-data")
             .input-group.input-group-sm.mb-3
                 .input-group-prepend 
                     span.input-group-text UserID
-                input.form-control(type="text",name ="_id", value=' '+user._id)
+                input.form-control(type="text",name ="_id", value=''+user._id)
             .input-group.input-group-sm.mb-3
                 .input-group-prepend 
                     span.input-group-text Name
-                input.form-control(type="text",name = "name", value=' '+user.name)
+                input.form-control(type="text",name = "name", value=''+user.name)
             .input-group.input-group-sm.mb-3
                 .input-group-prepend 
                     span.input-group-text Phone
-                input.form-control(type="text",name = "phone", value=' '+user.phone)
+                input.form-control(type="text",name = "phone", value=''+user.phone)
             .input-group.input-group-sm.mb-3
                 .input-group-prepend 
                     span.input-group-text Avatar
-                input.form-control(type="text",name = "avatar", value=' '+user.avatar)
+                input.form-control(type="text",name = "avatarout", value=''+user.avatar)
+            .input-group.input-group.mb-2
+                .input-group-prepend 
+                    span.input-group-text Avatar
+                        input.form-control-file(type="file", name ="avatar").ml-1
             .input-group
                     .input-group-prepend
                         span.input-group-text About infomatino

@@ -41,7 +41,7 @@ module.exports.getUserInfo = async function(req,res){
 };
 
 module.exports.deleteUser = async function(req,res){
-    console.log(req);
+    // console.log(req);
     var id = req.params.id;
     await user.remove({"_id":id})
     res.redirect('/user');
@@ -54,16 +54,22 @@ module.exports.potCreateUser = async function(req,res){
 };
 
 module.exports.postUpdate = async function(req,res){
-    var idpr =req.params.userId;
     var newUser = req.body;
-    var id = newUser._id.split(' ')[1];
-    console.log(id);
+    if(req.file){
+        var avatar = req.file.path.split('public\\').join('');
+    }else{
+        if(newUser.avatarout){
+            var avatar = newUser.avatarout
+        }else{
+            var avatar = 'uploads/logo'
+        }   
+    }
     var item = {
         name: newUser.name,
         phone: newUser.phone,
         about: newUser.about,
-        avatar: newUser.avatar
+        avatar: avatar
     };
-    await user.update({"_id":id},item);
+    await user.update({"_id":newUser._id},item);
     res.redirect('/user');
 };
