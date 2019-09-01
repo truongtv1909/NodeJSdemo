@@ -29,9 +29,32 @@ module.exports.getCreate = function(req,res){
  res.render('pet/createpet');
 };
 
+module.exports.delete = async function(req,res){
+    var petId = req.params.petId;
+    // console.log(req.params.petId);
+    await pet.remove({"_id":petId});
+    res.redirect('/pet');
+}
+
 module.exports.postCreate = function(req,res){
     res.redirect('/pet');
 };
+
+module.exports.postUpdate = async function(req,res){
+    console.log('---------------------------UPDATE------------------------');
+    // console.log(req.body);
+    var id = req.body.id;
+    var item = {
+        name: req.body.name,
+        image: req.body.image,
+        quanlity: req.body.quanlity,
+        price: req.body.price,
+        description: req.body.description
+    };
+    // console.log(item);
+    await pet.update({"_id":id},item);
+    res.redirect('/pet');
+}
 
 module.exports.getSearch = async function(req,res){
 
@@ -55,8 +78,6 @@ module.exports.getaddtocart = async function(req,res, next){
         res.redirect('/pet');
         return;
     }
-
-
     var count = petdb.get('session').find({id:sessionId}).get('cart.'+cartId,0).value();
 
     petdb.get('session').find({id:sessionId}).set('cart.'+cartId,count + 1).write();
@@ -65,23 +86,11 @@ module.exports.getaddtocart = async function(req,res, next){
 }
 
 module.exports.getInfomation = async function(req,res){
-    // console.log(req.params.petid);
     var key = req.params.petid;
-
-    var allpet = await pet.find();
-    
-    var pet = allpet.find(function(e){
-        return e.id === key;
-    });
-
+    var petInfo = await pet.find({"_id":key});
     res.render('pet/petinfo',{
-        pet:pet
+        pet: petInfo[0]
     });
-    // var pet = petdb.get('petdb').find({id:key}).value();
-
-    // res.render('pet/petinfo',{
-    //     pet:pet
-    // });
 };
 
 

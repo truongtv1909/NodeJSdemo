@@ -1,9 +1,9 @@
 var petdb = require('../petdb');
 var shortid = require('shortid');
+var pets = require('../models/pet.model');
 
 module.exports.validatePostCreatePet = function(req, res, next){
     // req.body.id = shortid();
-    
 
     var errors = [];
     var name = req.body.name;
@@ -16,12 +16,12 @@ module.exports.validatePostCreatePet = function(req, res, next){
     }
     if(!quanlity){
         errors.push('Quanlity is number.. ');
-        console.log(req.body)
+        
     }
     if(!price){
         errors.push('Price is number...');
     }
-    console.log(errors);
+    
     if(errors.length){
 
         res.render('pet/createpet',{
@@ -40,7 +40,8 @@ module.exports.validatePostCreatePet = function(req, res, next){
         price: price,
         description: description
     };
+    pets.create(arr);
 
-    petdb.get('petdb').push(arr).write();
+    // petdb.get('petdb').push(arr).write();
     next();
 }

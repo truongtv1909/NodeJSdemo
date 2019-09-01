@@ -7,30 +7,32 @@ block common
             a.nav-link.navcus(href="/pet") Pet
     .container
         h1 Pet infomation
-    
-        .input-group.input-group-lg.mb-3
-            .input-group-prepend 
-                span.input-group-text Pet id
-            input.form-control(type="text", value=' '+pet.id)
-        .input-group.input-group-lg.mb-3
-            .input-group-prepend 
-                span.input-group-text Pet name
-            input.form-control(type="text", value=' '+pet.name)
-        .input-group.input-group-lg.mb-3
-            .input-group-prepend 
-                span.input-group-text Pet image
-            input.form-control(type="text", value=' '+pet.image)
-        .input-group.input-group-lg.mb-3
-            .input-group-prepend 
-                span.input-group-text Quanlity
-            input.form-control(type="text", value=' '+pet.quanlity)
-        .input-group.input-group-lg.mb-3
-            .input-group-prepend 
-                span.input-group-text Price
-            input.form-control(type="text", value=' '+pet.price)
-        .input-group
-                .input-group-prepend
-                    span.input-group-text About infomatino
-                textarea.form-control(aria-label='With textarea')=pet.description
-        a.btn.btn-outline-secondary.mt-1(href="/pet") Back
+
+        form(action="/pet/update", method="post")
+            .input-group.input-group-lg.mb-3
+                .input-group-prepend 
+                    span.input-group-text Pet id
+                input.form-control(type="text",name="id", value=''+pet.id)
+            .input-group.input-group-lg.mb-3
+                .input-group-prepend 
+                    span.input-group-text Pet name
+                input.form-control(type="text",name="name", value=''+pet.name)
+            .input-group.input-group-lg.mb-3
+                .input-group-prepend 
+                    span.input-group-text Pet image
+                input.form-control(type="text",name="image", value=''+pet.image)
+            .input-group.input-group-lg.mb-3
+                .input-group-prepend 
+                    span.input-group-text Quanlity
+                input.form-control(type="text",name = "quanlity", value=''+pet.quanlity)
+            .input-group.input-group-lg.mb-3
+                .input-group-prepend 
+                    span.input-group-text Price
+                input.form-control(type="text",name = "price" value=''+pet.price)
+            .input-group
+                    .input-group-prepend
+                        span.input-group-text About infomatino
+                    textarea.form-control(aria-label='With textarea',name="description")=pet.description
+            a.btn.btn-outline-secondary.mt-1(href="/pet") Back
+            button.btn.btn-outline-secondary.mt-1.ml-1 Update
     

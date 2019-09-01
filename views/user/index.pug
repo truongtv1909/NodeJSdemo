@@ -9,11 +9,11 @@ block common
         a.nav-link.navcus(href="#") About us
     .container
         .d-flex.align-items-center
-            a.btn.btn-outline-secondary.mt-1(href="/user/create") Create new user
+            a.btn.btn-primary.mb-1.btn-lg(href="/user/create") Create new user
             form.ml-auto(action="/user/search", method="GET")
                 .col-xs-2.divtbs
                     input#id.form-control(type="text", name="q" , value="")
-                    button.btn.btn-outline-secondary.ml-1 Search
+                    button.btn.btn-primary.ml-1 Search
         table.table.table-striped
             tr
                 th Avatar
@@ -24,13 +24,14 @@ block common
             each us in user
                 tr
                     td
-                        img(src=us.avatar,width="32", alt="")
+                        
+                        img.imgcus(src=us.avatar,width="32", alt="")
                     td=us.name
                     td=us.phone
                     td=us.about
                     td
-                        a.btn.btn-outline-secondary(href="/user/"+us.id) info
-                        a.btn.btn-outline-secondary.ml-1(href="/user/deleteUser/"+us.id) Delete
+                        a.btn.btn-info(href="/user/"+us.id) info
+                        a.btn.btn-outline-danger.ml-1(href="/user/deleteUser/"+us.id) Delete
         script.
             var searchInput = document.getElementById('id');
             var value = searchInput.value;

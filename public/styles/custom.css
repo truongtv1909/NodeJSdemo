@@ -25,4 +25,9 @@ color: green !important;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
+.imgcus{
+    width:35px;
+    height: 35px;
+    border-radius: 30px;
+}
 

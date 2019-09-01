@@ -12,7 +12,7 @@ block common
     .container
         h1 Pet list
         .d-flex.align-items-center
-            a.btn.btn-outline-secondary.mt-1(href="/pet/create") Create new pet
+            a.btn.btn-primary.mb-1.btn-lg(href="/pet/create") Create new pet
             form.ml-auto(action="/pet/search", method="GET")
                 .col-xs-2.divtbs
                     input#id.form-control(type="text", name="q" , value="")
@@ -20,14 +20,16 @@ block common
         .row
             each pt in pet
                 .col-3
-                    .card(style='width: 18rem;').p-2
+                    .card(style='width: 18rem;').p-2.mb-1
                         img(src=''+pt.image).card-img-top
                         .card-body.p-2
                             h5.card-title=pt.name
                             p.card-text=pt.description
-                            a.btn.btn-primary(href='/pet/add/'+pt.id) Add to cart
+                            a.btn.btn-primary(href='/pet/add/'+pt.id) Add cart
+                            a.btn.btn-danger.ml-1(href='/pet/delete/'+pt.id) delete
+                            a.btn.btn-info.ml-1(href='/pet/'+pt.id) Info
       
-        nav(aria-label='Page navigation example').mt-2
+        nav(aria-label='Page navigation example').mt-1
             ul.pagination
                 li.page-item.disabled
                 a.page-link(href='?page='+(page-1)) Previous
