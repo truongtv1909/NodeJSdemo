@@ -8,7 +8,7 @@ module.exports.potCreateUser = function(req,res,next){
     if(req.file){
         var avatar = req.file.path.split('public\\').join('');
     }else{
-        var avatar = '/uploads/logo'
+        var avatar = 'uploads/logo'
     }
     // var avatars = avatarString.split('public\\');
     // var avatar = avatars.join('');
@@ -33,7 +33,7 @@ module.exports.potCreateUser = function(req,res,next){
         return;
     }
     res.locals.newuser = {
-        id: shortid.generate(),
+        // id: shortid.generate(),
         name: namenew,
         phone: phone,
         about: about,

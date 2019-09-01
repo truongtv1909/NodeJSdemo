@@ -7,7 +7,7 @@
       "about": "asdas",
       "email": "admin@gmail.com",
       "password": "a8f5f167f44f4964e6c998dee827110c",
-      "avatar": "uploads/admin"
+      "avatar": "uploads\\admin"
     },
     {
       "id": "_aB6Jg-HZ",
@@ -22,6 +22,13 @@
       "phone": "1234567894",
       "about": "asd",
       "avatar": "uploads\\f42521c72ed2bf8faf98224aeeec3768"
+    },
+    {
+      "id": "E7kv_Hj68_",
+      "name": "as",
+      "phone": "0985929797",
+      "about": "as",
+      "avatar": "/uploads/logo"
     }
   ],
   "session": [

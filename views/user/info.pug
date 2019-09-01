@@ -7,18 +7,27 @@ block common
             a.nav-link.navcus(href="/user") User
     .container
         h1 User infomation
-    
-        .input-group.input-group-sm.mb-3
-            .input-group-prepend 
-                span.input-group-text UserID
-            input.form-control(type="text", value=' '+user.id)
-        .input-group.input-group-sm.mb-3
-            .input-group-prepend 
-                span.input-group-text Name
-            input.form-control(type="text", value=' '+user.name)
-        .input-group
-                .input-group-prepend
-                    span.input-group-text About infomatino
-                textarea.form-control(aria-label='With textarea')=user.about
-        a.btn.btn-outline-secondary.mt-1(href="/user") Back
+        form(action="/user/update", method ="POST")
+            .input-group.input-group-sm.mb-3
+                .input-group-prepend 
+                    span.input-group-text UserID
+                input.form-control(type="text",name ="_id", value=' '+user._id)
+            .input-group.input-group-sm.mb-3
+                .input-group-prepend 
+                    span.input-group-text Name
+                input.form-control(type="text",name = "name", value=' '+user.name)
+            .input-group.input-group-sm.mb-3
+                .input-group-prepend 
+                    span.input-group-text Phone
+                input.form-control(type="text",name = "phone", value=' '+user.phone)
+            .input-group.input-group-sm.mb-3
+                .input-group-prepend 
+                    span.input-group-text Avatar
+                input.form-control(type="text",name = "avatar", value=' '+user.avatar)
+            .input-group
+                    .input-group-prepend
+                        span.input-group-text About infomatino
+                    textarea.form-control(aria-label='With textarea', name = "about")=user.about
+            a.btn.btn-outline-secondary.mt-1(href="/user") Back
+            button.btn.btn-outline-secondary.mt-1.ml-1 Update
     

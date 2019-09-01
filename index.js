@@ -2,6 +2,9 @@ require('dotenv').config();
 var express = require('express');
 var bodyparser = require('body-parser');
 var cookieperser = require('cookie-parser');
+var mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGO_URL);
 
 var userRoute = require('./rountes/user.router');
 var userLogin = require('./rountes/login.router');
@@ -20,7 +23,6 @@ app.use(middleware.sessionCard,middleware.sessionCount);
 
 app.set('view engine','pug');
 app.set('views','./views');
-
 
 app.use('/login',userLogin);
 app.use('/user',middleware.requireLogin,userRoute);

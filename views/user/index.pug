@@ -20,7 +20,7 @@ block common
                 th Name
                 th Phone
                 th About
-                th Action
+                th.pl-5 Action
             each us in user
                 tr
                     td
@@ -29,7 +29,8 @@ block common
                     td=us.phone
                     td=us.about
                     td
-                        a.btn.btn-outline-secondary(href="/user/"+us.id) info 
+                        a.btn.btn-outline-secondary(href="/user/"+us.id) info
+                        a.btn.btn-outline-secondary.ml-1(href="/user/deleteUser/"+us.id) Delete
         script.
             var searchInput = document.getElementById('id');
             var value = searchInput.value;

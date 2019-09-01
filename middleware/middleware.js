@@ -28,6 +28,6 @@ module.exports.sessionCount = function(req, res, next){
     var sessionCuren = req.signedCookies.secId;
     var ses = petdb.get('session').find({id:sessionCuren}).get('cart').size().value();
     res.locals.countCart = ses;
-    console.log(ses);
+    // console.log(ses);
     next();
 }
