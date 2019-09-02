@@ -28,7 +28,6 @@ module.exports.getCreate = function(req,res){
 
 module.exports.delete = async function(req,res){
     var petId = req.params.petId;
-    // console.log(req.params.petId);
     await pet.remove({"_id":petId});
     res.redirect('/pet');
 }

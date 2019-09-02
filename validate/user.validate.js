@@ -33,7 +33,6 @@ module.exports.potCreateUser = function(req,res,next){
         return;
     }
     res.locals.newuser = {
-        // id: shortid.generate(),
         name: namenew,
         phone: phone,
         about: about,

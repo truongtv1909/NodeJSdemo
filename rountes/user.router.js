@@ -15,6 +15,4 @@ router.post('/update',upload.single('avatar'),controller.postUpdate);
 router.post('/create',upload.single('avatar'),validate.potCreateUser,controller.potCreateUser);
 
 
-// router.post('/update',controller.potUpdate);
-
 module.exports = router;

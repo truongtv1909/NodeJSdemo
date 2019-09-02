@@ -3,7 +3,7 @@ var shortid = require('shortid');
 var pets = require('../models/pet.model');
 
 module.exports.validatePostCreatePet = function(req, res, next){
-    // req.body.id = shortid();
+    
 
     var errors = [];
     var name = req.body.name;
@@ -42,6 +42,6 @@ module.exports.validatePostCreatePet = function(req, res, next){
     };
     pets.create(arr);
 
-    // petdb.get('petdb').push(arr).write();
+    
     next();
 }
