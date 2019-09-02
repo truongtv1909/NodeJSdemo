@@ -5,23 +5,20 @@ var pets = petdb.get('petdb').value();
 
 module.exports.index = async function(req, res){
     // -------------------------------------------------------------------
-    // var page = parseInt(req.query.page) || 1;
-    // var perPage = 8;
-    // var start = (page-1)*perPage;
-    // var end = (page -1)*perPage + perPage;
-    // var pas = Math.ceil(pets.length/perPage);
-    // petindex = petdb.get('petdb').value().slice(start, end); 
-    // // -------------------------------------------------------------------
-    
-    // res.render('pet/index',{
-    //     pet:petindex,
-    //     numberpage: pas,
-    //     page: page
-    // });
-
     var petsMongo = await pet.find();
+    var page = parseInt(req.query.page) || 1;
+    var perPage = 8;
+    var start = (page-1)*perPage;
+    var end = (page -1)*perPage + perPage;
+    var pas = Math.ceil(petsMongo.length/perPage);
+
+    petindex = petsMongo.slice(start, end); 
+    // // -------------------------------------------------------------------
+
     res.render('pet/index',{
-        pet:petsMongo
+        pet:petindex,
+        numberpage: pas,
+        page: page
     })
 };
 
@@ -41,8 +38,7 @@ module.exports.postCreate = function(req,res){
 };
 
 module.exports.postUpdate = async function(req,res){
-    console.log('---------------------------UPDATE------------------------');
-    // console.log(req.body);
+
     var id = req.body.id;
     var item = {
         name: req.body.name,
@@ -51,18 +47,18 @@ module.exports.postUpdate = async function(req,res){
         price: req.body.price,
         description: req.body.description
     };
-    // console.log(item);
     await pet.update({"_id":id},item);
     res.redirect('/pet');
 }
 
 module.exports.getSearch = async function(req,res){
+    var name = req.query.q;
 
-    if(req.query.q){
-        var name = req.query.q;
-    }else{
-        var name = req.query.name;
-    }
+    // if(req.query.q){
+    //     var name = req.query.q;
+    // }else{
+    //     var name = req.query.name;
+    // }
     var allPet = await pet.find();
 
     var findpet = allPet.filter(e=>e.name.toLocaleLowerCase().includes(name.toLocaleLowerCase()));
