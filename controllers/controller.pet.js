@@ -1,6 +1,6 @@
 var petdb = require('../petdb');
 var pet = require('../models/pet.model');
-var pets = petdb.get('petdb').value();
+
 
 
 module.exports.index = async function(req, res){

@@ -4,8 +4,8 @@ var userSchema = new mogoose.Schema({
     name: String,
     phone: String,
     about: String,
-    // email: String,
-    // password: String,
+    email: String,
+    password: String,
     avatar: String
 });
 

@@ -1,12 +1,18 @@
 var db = require('../db');
-module.exports.index = function(req,res,next){
+const users = require('../models/user.model');
+module.exports.index = async function(req,res,next){
     var labe = ''
     var add = '';
-    db.get('users').find({id:req.cookies.cooid}).value();
+    let userCookie = req.cookies.cooid;
+    let arrUser = await users.find({'_id':userCookie});
+    let user = arrUser[0];
+    
+    // db.get('users').find({id:req.cookies.cooid}).value();
 
     if(req.cookies.cooid){
         labe = 'Logout';
-        add = db.get('users').find({id:req.cookies.cooid}).value();
+        // add = db.get('users').find({id:req.cookies.cooid}).value();
+        add = user;
         res.render('index',{
             name:add.name.toLocaleUpperCase(),
             labes:labe

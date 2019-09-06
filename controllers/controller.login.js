@@ -1,15 +1,20 @@
 var md5 = require('md5');
 var db = require('../db');
-var userinDB = db.get('users').value();
+const users = require('../models/user.model');
 
 module.exports.login = function(req, res){
 res.clearCookie('cooid');
 res.render('login/test');
 };
-module.exports.postLogin = function(req, res){
+
+module.exports.postLogin = async function(req, res){
 var email = req.body.email;
 var password = req.body.password;
-var userif = db.get('users').find({email:email}).value();
+
+let arrUser = await users.find({'email':email});
+let userif = arrUser[0];
+
+
 var error = [];
 if(!userif){
     error.push('Email is not exist');
@@ -28,6 +33,7 @@ if(userif.password !== passwordHard){
     });
     return;
 }
-res.cookie('cooid',userif.id);
+res.cookie('cooid',userif._id);
 res.redirect('/');
 }
+ 

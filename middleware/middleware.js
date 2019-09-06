@@ -1,8 +1,11 @@
 var db = require('../db');
 var petdb = require('../petdb');
 var shortid = require('shortid');
-module.exports.requireLogin = function(req, res, next){
-    var user_ = db.get('users').find({id:req.cookies.cooid}).value();
+const users = require('../models/user.model');
+module.exports.requireLogin = async function(req, res, next){
+    // var user_ = db.get('users').find({id:req.cookies.cooid}).value();
+    let arrUser = await users.find({'_id':req.cookies.cooid});
+    let user_ = arrUser[0];
     if(!user_){
         res.redirect('/login');
         return;
